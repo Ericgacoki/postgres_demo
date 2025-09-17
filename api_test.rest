@@ -1,0 +1,16 @@
+GET http://localhost:3001/api/notes
+
+###
+
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content":"Hello from VS REST client 😂",
+  "important":false
+}
+
+###
+
+DELETE http://localhost:3001/api/notes/68c4286bcc574f2111161f90
+Content-Type: application/json
