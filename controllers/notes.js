@@ -6,7 +6,7 @@ const noteFinder = async (req, res, next) => {
   next()
 }
 
-// routes to append on /api/notes
+//* routes to append on /api/notes
 
 router.get('/', async (req, res) => {
   const notes = await Note.findAll()
