@@ -18,9 +18,9 @@ Note.init({
   important: {
     type: DataTypes.BOOLEAN
   },
-  date: {
+  createdAt: {
     type: DataTypes.DATE,
-    defaultValue: sequelize.NOW
+    defaultValue: DataTypes.NOW
   }
 }, {
   sequelize,
