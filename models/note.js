@@ -18,14 +18,10 @@ Note.init({
   important: {
     type: DataTypes.BOOLEAN
   },
-  createdAt: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
-  }
 }, {
   sequelize,
   underscored: true,
-  timestamps: false,
+  timestamps: true,
   modelName: 'note'
 })
 

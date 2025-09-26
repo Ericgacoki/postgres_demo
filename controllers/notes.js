@@ -43,10 +43,11 @@ router.get('/', async (req, res) => {
       model: User,
       attributes: ['name']
     },
-    where: {
-      important: req.query.important === "true"
-    }
+    where: req.query.important !== undefined
+      ? { important: req.query.important === "true" }
+      : undefined   // <-- no filter if not provided
   })
+
   res.json(notes)
 })
 
