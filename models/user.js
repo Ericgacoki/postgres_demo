@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize')
 
 const { sequelize } = require('../util/db')
 
-class User extends Model {}
+class User extends Model { }
 
 User.init({
   id: {
@@ -19,11 +19,36 @@ User.init({
     type: DataTypes.STRING,
     allowNull: false
   },
+  admin: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  disabled: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
 }, {
   sequelize,
   underscored: true,
   timestamps: true,
-  modelName: 'user'
+  modelName: 'user',
+  defaultScope: {
+    where: {
+      disabled: false
+    }
+  },
+  scopes: {
+    admin: {
+      where: {
+        admin: true
+      }
+    },
+    disabled: {
+      where: {
+        disabled: true
+      }
+    }
+  }
 })
 
 module.exports = User
