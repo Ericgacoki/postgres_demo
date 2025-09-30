@@ -4,7 +4,7 @@ GET http://localhost:3001/api/notes
 
 POST http://localhost:3001/api/notes
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVyaWMiLCJpZCI6MiwiaWF0IjoxNzU4ODY2MDQxfQ.eiR7uewWASBU9Q3BbXAUv-6FcP7-Bn9znRQU4mUQnLU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVyaWMiLCJpZCI6MiwiaWF0IjoxNzU4ODc0Nzk0fQ.Og6vjkRDeyQK5Jb_vyG3RWunTsh1n3RAuso9RPKMJRc
 
 {
   "content":"New note that is not important",
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3001/api/users
+GET http://localhost:3001/api/users/3
 
 ###
 
@@ -26,8 +26,8 @@ POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "username":"eric",
-  "name":"Eric"
+  "username":"Dummy",
+  "name":"Dummy Dude"
 }
 
 ###
@@ -38,4 +38,14 @@ Content-Type: application/json
 {
   "username":"eric",
   "password":"secret"
+}
+
+###
+
+PUT http://localhost:3001/api/users/Dummy
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVyaWMiLCJpZCI6MiwiaWF0IjoxNzU4ODc0Nzk0fQ.Og6vjkRDeyQK5Jb_vyG3RWunTsh1n3RAuso9RPKMJRc
+
+{
+  "disabled": "false"
 }
