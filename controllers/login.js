@@ -16,14 +16,20 @@ router.post('/', async (request, response) => {
   const passwordCorrect = body.password === 'secret'
 
   if (!user) {
-    return response.status(401).json({
+    return response.status(404).json({
       error: `Invalid username @${body.username}`
     })
   }
 
-  if (!(passwordCorrect)) {
+  if (!passwordCorrect) {
     return response.status(401).json({
       error: `Incorrect password for @${body.username}`
+    })
+  }
+
+  if (user.disabled) {
+    return response.status(401).json({
+      error: 'Account disabled, please contact admin!'
     })
   }
 
